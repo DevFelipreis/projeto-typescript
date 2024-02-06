@@ -62,10 +62,50 @@ export const cadastrarCarros = async (req: Request, res: Response) => {
 
 
 export const atualizarCarros = async (req: Request, res: Response) => {
+    const { marca, modelo, ano, cor, valor } = req.body;
+    const { id } = req.params
 
+    try {
+        const carro = await knex("carros").update({
+            marca,
+            modelo,
+            ano,
+            cor,
+            valor
+        }).where({ id });
+
+        if (!carro) {
+            return res.status(404).json("Carro não encontrado");
+        }
+        if (!marca || !modelo || !ano || !cor || !valor) {
+            return res.status(400).json("Todos os campos precisam ser preenchidos");
+        }
+        return res.status(201).json("Carro atualizado com sucesso");
+
+    } catch (error) {
+        if (error instanceof Error) {
+            return res.status(400).json("Erro inesperado");
+        }
+        return res.status(400).json("Erro inesperado");
+    }
 };
 
 
 export const excluirCarros = async (req: Request, res: Response) => {
+    const { id } = req.params
 
+    try {
+        const carro = await knex("carros").delete().where({ id });
+
+        if (!carro) {
+            return res.status(404).json("Carro não encontrado");
+        }
+        return res.status(201).json("Carro atualizado com sucesso");
+
+    } catch (error) {
+        if (error instanceof Error) {
+            return res.status(400).json("Erro inesperado");
+        }
+        return res.status(400).json("Erro inesperado");
+    }
 };
