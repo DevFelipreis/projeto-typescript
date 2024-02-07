@@ -60,8 +60,6 @@ export const cadastrarCarros = async (req: Request, res: Response) => {
         return res.status(400).json("Erro inesperado");
     }
 };
-
-
 export const atualizarCarros = async (req: Request, res: Response) => {
     const { marca, modelo, ano, cor, valor } = req.body;
     const { id } = req.params
@@ -91,8 +89,6 @@ export const atualizarCarros = async (req: Request, res: Response) => {
         return res.status(400).json("Erro inesperado");
     }
 };
-
-
 export const excluirCarros = async (req: Request, res: Response) => {
     const { id } = req.params
 
@@ -111,9 +107,7 @@ export const excluirCarros = async (req: Request, res: Response) => {
         return res.status(400).json("Erro inesperado");
     }
 };
-
 export const listarMarcas = async (req: Request, res: Response, next: Function) => {
-    const { marca } = req.body;
 
     try {
         const carros = await knex("marca_carros").select("*");
@@ -126,7 +120,6 @@ export const listarMarcas = async (req: Request, res: Response, next: Function) 
         return res.status(400).json("Erro inesperado");
     }
 };
-
 export const cadastrarMarca = async (req: Request, res: Response) => {
     const marca = req.body.marca.toLowerCase();
 

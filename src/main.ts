@@ -1,4 +1,3 @@
-console.clear();
 
 import "dotenv/config";
 
