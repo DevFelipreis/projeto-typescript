@@ -2,13 +2,12 @@ import { Router } from "express";
 import {
     atualizarCarros,
     cadastrarCarros,
-    cadastrarMarca,
     detalharCarros,
     excluirCarros,
-    listarCarros,
-    listarMarcas
+    listarCarros
 } from "./controladores/carros";
 import { listarMarcaCarros, listarMarcaCarrosExistente } from "./intermediario/validarCarros";
+import { cadastrarMarca, listarMarcas } from "./controladores/marca";
 
 
 const rotas = Router();
