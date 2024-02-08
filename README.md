@@ -44,7 +44,8 @@ Este é um sistema de CRUD para gerenciar informações sobre carros, incluindo 
 1. **Node.js e npm**: [Baixe e instale o Node.js](https://nodejs.org/) (v14.x ou superior) que inclui o npm.
 2. **Clonar o Repositório**: Use `git@github.com:DevFelipreis/projeto-typescript.git` para clonar este repositório em sua máquina local.
 3. **Instalar Dependências**: Navegue até o diretório do projeto e execute `npm install` para instalar as dependências do projeto.
-4. **Configurar o Banco de Dados**: Configure o banco de dados de acordo com as instruções no arquivo `database.sql`.
+4. **Configurar o Banco de Dados**: Configure o banco de dados de acordo com as instruções no arquivo `conexao.ts` e `tabelaCarros.sql`.
+5. **Configurar variáveis de ambiente**: Crie um arquivo `.env` e configure as credenciais a partir do arquivo `.env-example`.
 
 ## Como Usar
 
@@ -53,9 +54,11 @@ Este é um sistema de CRUD para gerenciar informações sobre carros, incluindo 
 
 ## Estrutura do Projeto
 
-- `src/`: Este diretório contém os arquivos-fonte TypeScript do backend.
-  - `controllers/`: Controladores que definem a lógica de manipulação dos carros.
-    - `routes/`: Rotas da API para manipulação de carros.
+- `dis/`: (abreviação de "distribuição") contém os arquivos resultantes da compilação/transpilação do código-fonte do projeto. Geralmente, esses arquivos são gerados a partir de código-fonte TypeScript para JavaScript ou de um formato de código-fonte mais recente para um formato mais antigo compatível com ambientes de execução específicos.
+-  `src/`: Este diretório contém os arquivos-fonte TypeScript do backend.
+- `main.ts`: O ponto de entrada principal do projeto TypeScript. Inicializa o aplicativo e executa o código principal.
+- `controllers/`: Controladores que definem a lógica de manipulação dos carros.
+- `rotas.ts`: Rotas da API para manipulação de carros.
 - `database/`: Scripts e configurações relacionados ao banco de dados.
 
 ## Contribuição
@@ -64,7 +67,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir um problema ou e
 
 ## Licença
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
+Este projeto está licenciado sob a [Licença MIT](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt).
 
 ---
 
