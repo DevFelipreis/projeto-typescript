@@ -49,7 +49,7 @@ Este é um sistema de CRUD para gerenciar informações sobre carros, incluindo 
 
 ## Como Usar
 
-1. **Iniciar o Servidor**: Execute `npm start` para iniciar o servidor backend.
+1. **Iniciar o Servidor**: Execute `npm run start` para produção ou `npm run deve` para desenvolvimento eassim inicie o servidor backend.
 2. **Interagir com a API**: Use ferramentas como Postman ou curl para enviar requisições HTTP para a API, conforme necessário.
 
 ## Estrutura do Projeto
